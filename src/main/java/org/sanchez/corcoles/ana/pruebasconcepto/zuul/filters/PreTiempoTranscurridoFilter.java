@@ -16,7 +16,7 @@ public class PreTiempoTranscurridoFilter extends ZuulFilter {
 
     /*
     Hay tres tipos de filtros:
-     *Pre --> Antes de que se resuelve la ruta, se usa para pasar datos a la request.
+     * Pre --> Antes de que se resuelve la ruta, se usa para pasar datos a la request.
      * Post --> Después de que se resuelva la ruta, se usa para modificar la response
      * Route --> Se ejecuta durante el enrutado, se usa para la comunicación con el microservicio.
      * */
