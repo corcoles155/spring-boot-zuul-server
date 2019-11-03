@@ -22,9 +22,13 @@ zuul:
     usuarios:
       service-id: servicio-usuarios
       path: /api/usuarios/**
+    security:
+      service-id: oauth-server
+      path: /api/security/**
+      sensitive-headers: Cookie, Set-Cookie
 
 #Para modificar el timeout de Hystrix y Ribbon, Hystrix envuelve a Ribbon, por lo que el timeout debe ser mayor.
-#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 20000
-#ribbon:
-  #ConnectTimeout: 3000
-  #ReadTimeout: 10000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 20000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 10000
