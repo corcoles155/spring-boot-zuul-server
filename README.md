@@ -15,3 +15,4 @@ Intervienen los repos:
 - spring-boot-servicio-productos-eureka
 - spring-boot-servicio-item-eureka
 - spring-boot-eureka-server
+- spring-boot-servicio-usuarios
