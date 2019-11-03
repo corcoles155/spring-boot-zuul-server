@@ -1,5 +1,6 @@
 package org.sanchez.corcoles.ana.pruebasconcepto.zuul.oauth.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -13,6 +14,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+
+    @Value("${config.security.oauth.jwt.key}")
+    private String jwtKey;
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -54,7 +58,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Bean("jwtAccessTokenConverter")
     public JwtAccessTokenConverter accessTokenConverter() {
         final JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        jwtAccessTokenConverter.setSigningKey("codigo_secreto"); //Esto debe ser un secreto
+        jwtAccessTokenConverter.setSigningKey(jwtKey); //Esto debe ser un secreto
         return jwtAccessTokenConverter;
     }
 }
