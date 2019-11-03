@@ -16,3 +16,4 @@ Intervienen los repos:
 - spring-boot-servicio-item-eureka
 - spring-boot-eureka-server
 - spring-boot-servicio-usuarios
+- spring-boot-oauth-server
