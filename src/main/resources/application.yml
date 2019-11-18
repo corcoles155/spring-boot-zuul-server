@@ -1,6 +1,11 @@
 spring:
   application:
     name: zuul-server
+  sleuth:
+    sampler:
+      probability: 1.0 #Probabilidad en la que va a enviar las trazas, solamente en el 10% de las request va a exportar la traza a Zipkin y la idea es que la envie siempre, por eso le cambiamos el valor de 0.1 (10%) que es el por defecto a 1.0 (100%)
+    base-url: http://localhost:9411 #Ruta del servidor Zipkin, esto es opcional, por defecto lo busca en local y en el puerto 9411
+
 server:
   port: 8084
 
